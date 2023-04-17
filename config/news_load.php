@@ -3,9 +3,8 @@
 require 'db.php';
 require "function.php";
 
-
 // Запрос для выбора новостей из базы данных
-$sql = "SELECT * FROM news ORDER BY RAND() LIMIT 4";
+$sql = "SELECT * FROM news1 ORDER BY RAND() LIMIT 8";
 $result = $connection->query($sql);
 
 if ($result->num_rows > 0) {
@@ -17,6 +16,9 @@ if ($result->num_rows > 0) {
         $news_image = $row['image'];
 
         if ($count % 4 == 0) {
+            if ($count > 0) {
+                echo '</section>';
+            }
             echo '<section class="clearfix">';
         }
         echo '<div class="column standard lt-1">';
