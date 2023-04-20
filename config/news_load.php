@@ -4,7 +4,7 @@ require 'db.php';
 require "function.php";
 
 // Запрос для выбора новостей из базы данных
-$sql = "SELECT * FROM news1 ORDER BY RAND() LIMIT 8";
+$sql = "SELECT * FROM news ORDER BY RAND() LIMIT 8";
 $result = $connection->query($sql);
 
 if ($result->num_rows > 0) {
